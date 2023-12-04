@@ -8,7 +8,13 @@ pipeline {
     stages {
         stage('docker-build'){
             steps {
-                sh 'docker build -t ${DOCKER_REGISTRY}/gts ${PROJECT_PATH}/DGP_GameManagementSystem/'
+                sh 'docker build -t ${DOCKER_REGISTRY}/gms ${PROJECT_PATH}/DGP_GameManagementSystem/'
+            }
+        }
+        stage('docker-push'){
+            steps {
+                sh 'docker login -u acrpoclotdevlotto -p TVmsgWdtCDOra0m+kmbtmriyJ43mYbxPK/Ab3P00XO+ACRA1Ms0g ${DOCKER_REGISTRY}'
+                sh 'docker push ${DOCKER_REGISTRY}/gms'
             }
         }
     }
