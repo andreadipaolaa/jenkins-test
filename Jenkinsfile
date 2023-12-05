@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_REGISTRY = 'acrpoclotdevlotto.azurecr.io'
-        PROJECT_PATH = '/var/jenkins_home/workspace/testing_testing_dgp_cloud_trunk'
+        PROJECT_PATH = '/var/jenkins_home/workspace/esting_testing_MAVEN_build_trunk'
     }
 
     stages {
